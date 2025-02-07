@@ -122,11 +122,12 @@ Hint: Return a new object literal from the callback that looks like:
       { first: "First Name", last: "Last Name" }
 */
 
-
-let inventorNames = inventors.map((inventor) => {
-    return ` {first: ${inventor.first}, last: ${inventor.last}}`
-});
-// console.log('Excercise 2: ',inventorNames)
+// let inventorNames = []
+let inventorNames = inventors.map(inventor => ({
+    first: inventor.first,
+     last: inventor.last
+}));
+console.log('Excercise 2: ',inventorNames)
 
 
 
@@ -183,10 +184,10 @@ let inventorNamedAda = inventors.find((firstName) => {
 // I couldnt figure out how so i split the names, reversed the order, then joined them back comma-seperated
 
 let firstlast = people.map((fullName)=>{
-       const parts = fullName.split(',');
+       const parts = fullName.split(' ');
        const reverse = parts.reverse();
 
-       return reverse.join(',')
+       return reverse.join(' ')
 
 });
 
@@ -225,10 +226,10 @@ let isAdultPresent = devs.some((adult) =>{
 // - Store the result (true or false) in the variable 'isEveryone19OrOlder'.
 
 
-let isEveryone19OrOlder = devs.some((person) =>{
+let isEveryone19OrOlder = devs.every((person) =>{
     return person.year > 2005
 });
-// console.log('Exercise 7 : ', isEveryone19OrOlder)
+console.log('Exercise 7 : ', isEveryone19OrOlder)
 
 
 /*-------------------------------------- Exercise 8: Array.prototype.find() -----------------------------------------------*/
